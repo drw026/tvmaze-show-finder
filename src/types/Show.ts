@@ -1,24 +1,39 @@
-type Show = {
+export type Show = {
   id: number;
   name: string;
-  rating: number;
+  rating: number | null;
   started: string;
   ended: string;
   imageUrl: string;
   summary: string;
+  genre: string[];
 }
+export type ShowItem = Pick<Show, 'id' | 'name' | 'imageUrl'>
 
-type ShowItem = Pick<Show, 'id' | 'name' | 'imageUrl'>
-
-type ShowResponse = {
+export type ShowResponse = {
   id: number;
   name: string;
-  rating: number;
+  rating: {
+    average: number;
+  }
   started: string;
   ended: string;
-  image: {
-    medium: string;
-    original: string;
-  };
+  image: ShowImageReponse | null;
   summary: string;
+  genres: string[];
+}
+
+export type ShowImageReponse = {
+  medium: string;
+  original: string;
+}
+
+export type ShowsInGenre = {
+  genreName: string;
+  shows: ShowItem[];
+}
+
+export type SearchShowsResponse = {
+  score: number;
+  show: ShowResponse;
 }

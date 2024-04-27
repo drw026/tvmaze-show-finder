@@ -6,7 +6,8 @@ import ShowDetails from './components/ShowDetails/ShowDetails.vue';
 
 const routes = [
   { path: '/', component: Overview, children: [{ path: '', component: ShowOverview }] },
-  { path: '/show/:id', component: Details, children: [{ path: '', component: ShowDetails }] },
+  { path: '/show/:id', component: Details, children: [{ path: '', component: ShowDetails, name: 'show' }] },
+  { path: '/search/:query', component: Search, children: [{ path: '', component: SearchOverview, name: 'search' }] },
 ];
 
 const router = createRouter({
