@@ -1,0 +1,11 @@
+# Requirements
+- [x] Initial display a few shows based on genre and rating
+- [x] Search for shows
+- [x] Show details of a show in a detailpage
+- [x] Style Homepage/Show Overviewpage + responsive
+- [x] Style Search Overviewpage + responsive
+- [x] Add more data to Detailpage
+- [x] Style Detailpage + responsive
+- [x] Style Searchbar
+- [ ] Unit test
+- [ ] Create catch all route
