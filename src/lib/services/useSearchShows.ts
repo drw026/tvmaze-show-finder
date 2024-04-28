@@ -2,10 +2,11 @@ import { useQuery } from '@tanstack/vue-query';
 import { VITE_TVMAZE_API_URL } from '../../common/constants';
 import { SearchShowsResponse } from '../../types/Show';
 import { mapSearchShows } from '../mappers/mapSearchShows';
+import { type Ref, toValue } from 'vue';
 
-export function useSearchShows(searchQuery: string) {
+export function useSearchShows(searchQuery: Ref<string>) {
   const query = new URLSearchParams({
-    q: searchQuery
+    q: toValue(searchQuery)
   }).toString();
 
   return useQuery({

@@ -14,16 +14,16 @@ const search = () => {
 
 <template>
   <div class="flex gap-3">
-    <input
-      class="block w-full rounded-md border-gray-300 h-10 p-3"
-      placeholder="Find your show"
-      v-model="searchQuery"
-    />
     <button
       @click="search"
       class="rounded px-3 py-2 font-bold bg-amber-300"
     >
       Search
     </button>
+    <input
+        class="block w-full rounded-md border-gray-300 h-10 p-3"
+        placeholder="Find your show"
+        v-model="searchQuery"
+    />
   </div>
 </template>
