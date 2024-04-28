@@ -3,7 +3,7 @@
     <template v-slot:search>
       <Search />
     </template>
-    <router-view></router-view>
+    <router-view :key="$route.params.id"></router-view>
   </page>
 </template>
 <script setup lang="ts">

@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import { useShows } from '../../lib/services/useShows';
 import ShowCard from '../ShowCard/ShowCard.vue';
+import Spinner from '../Spinner.vue';
 
 const { data: showsInGenre, isLoading } = useShows();
 </script>
 
 <template>
-  <div class="flex flex-col gap-6">
+  <template v-if="isLoading">
+    <Spinner />
+  </template>
+
+  <div v-if="showsInGenre" class="flex flex-col gap-6">
     <div
       v-for="genre in showsInGenre"
       :key="genre.genreName"
@@ -20,4 +25,6 @@ const { data: showsInGenre, isLoading } = useShows();
       </template>
     </div>
   </div>
+
+  <div v-else-if="!showsInGenre && !isLoading">No data</div>
 </template>

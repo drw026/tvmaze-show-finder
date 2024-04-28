@@ -53,7 +53,7 @@ const ended = show.value?.ended ? `(${show.value.ended})` : '';
         </ul>
       </section>
     </div>
-    <section id="cast" class="flex flex-col gap-2">
+    <section id="cast" class="flex flex-col gap-2" v-if="show.cast.length">
       <h2 class="text-2xl font-semibold">Cast</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <CastCard v-for="cast in show.cast" :key="cast.person.id" :cast="cast" />
@@ -61,5 +61,5 @@ const ended = show.value?.ended ? `(${show.value.ended})` : '';
     </section>
   </section>
 
-  <div v-else>No data</div>
+  <div v-else-if="!show && !isLoading">No data</div>
 </template>
