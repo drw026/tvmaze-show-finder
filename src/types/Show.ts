@@ -2,38 +2,71 @@ export type Show = {
   id: number;
   name: string;
   rating: number | null;
-  started: string;
   ended: string;
   imageUrl: string;
   summary: string;
   genre: string[];
-}
-export type ShowItem = Pick<Show, 'id' | 'name' | 'imageUrl'>
+  started: string;
+  status: string;
+  type: string;
+  language: string;
+  cast: Cast[];
+};
+
+export type Cast = {
+  character: {
+    name: string;
+  };
+  person: {
+    id: string;
+    name: string;
+    imageUrl: string;
+  };
+};
+
+export type ShowItem = Pick<Show, 'id' | 'name' | 'imageUrl'>;
 
 export type ShowResponse = {
   id: number;
   name: string;
   rating: {
     average: number;
-  }
-  started: string;
+  };
+  premiered: string;
   ended: string;
-  image: ShowImageReponse | null;
+  image: ImageResponse | null;
   summary: string;
   genres: string[];
-}
+  status: string;
+  type: string;
+  language: string;
+  _embedded: {
+    cast: CastResponse[];
+  };
+};
 
-export type ShowImageReponse = {
+export type ImageResponse = {
   medium: string;
   original: string;
-}
+};
 
 export type ShowsInGenre = {
   genreName: string;
   shows: ShowItem[];
-}
+};
 
 export type SearchShowsResponse = {
   score: number;
   show: ShowResponse;
-}
+};
+
+export type CastResponse = {
+  character: {
+    name: string;
+  };
+  person: {
+    id: string;
+    name: string;
+    image: ImageResponse | null;
+  };
+};

@@ -5,6 +5,7 @@ import { mapShow } from '../mappers/mapShow';
 
 export function useShow(showId: string) {
   const url = new URL(showId, `${VITE_TVMAZE_API_URL}/shows/`);
+  url.searchParams.append('embed', 'cast')
 
   return useQuery({
     queryKey: ['show'],
