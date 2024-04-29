@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { useSearchShows } from '../../lib/services/useSearchShows';
-import ShowCard from '../ShowCard/ShowCard.vue';
+import ShowCard from '../ShowCard.vue';
 import { toRef } from 'vue';
 import Spinner from '../Spinner.vue';
 

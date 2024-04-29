@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useShows } from '../../lib/services/useShows';
-import ShowCard from '../ShowCard/ShowCard.vue';
+import ShowCard from '../ShowCard.vue';
 import Spinner from '../Spinner.vue';
 
 const { data: showsInGenre, isLoading } = useShows();
