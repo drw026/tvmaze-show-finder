@@ -4,26 +4,24 @@ import router from '../router';
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
-const searchQuery = ref(route.params.query as string || null);
+const searchQuery = ref((route.params.query as string) || null);
 
 const search = () => {
   if (searchQuery.value === null) return;
-  router.push({ name: 'search', params: { query: searchQuery.value }  })
-}
+  router.push({ name: 'search', params: { query: searchQuery.value } });
+};
 </script>
 
 <template>
   <div class="flex gap-3">
-    <button
-      @click="search"
-      class="rounded px-3 py-2 font-bold bg-amber-300"
-    >
+    <button @click="search" class="rounded bg-amber-300 px-3 py-2 font-bold">
       Search
     </button>
     <input
-        class="block w-full rounded-md border-gray-300 h-10 p-3"
-        placeholder="Find your show"
-        v-model="searchQuery"
+      type="search"
+      class="block h-10 w-full rounded-md border-gray-300 p-3"
+      placeholder="Find your show"
+      v-model="searchQuery"
     />
   </div>
 </template>
