@@ -18,7 +18,7 @@ export type Cast = {
     name: string;
   };
   person: {
-    id: string;
+    id: number;
     name: string;
     imageUrl: string;
   };
@@ -65,7 +65,7 @@ export type CastResponse = {
     name: string;
   };
   person: {
-    id: string;
+    id: number;
     name: string;
     image: ImageResponse | null;
   };

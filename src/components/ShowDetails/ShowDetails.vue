@@ -3,10 +3,11 @@ import { useRoute } from 'vue-router';
 import { useShow } from '../../lib/services/useShow';
 import Spinner from '../Spinner.vue';
 import CastCard from './CastCard.vue';
+import { computed, toValue } from 'vue';
 
 const route = useRoute();
 const { isLoading, data: show } = useShow(route.params.id.toString());
-const ended = show.value?.ended ? `(${show.value.ended})` : '';
+const ended = computed(() => toValue(show)?.ended ? `(${toValue(show)?.ended})` : '')
 </script>
 
 <template>
