@@ -1,5 +1,5 @@
-import { sleep, timer } from './utils';
 import { it, describe, expect } from 'vitest';
+import { sleep, timer } from '@/common/utils';
 
 describe('timer', () => {
   const timeStamp = timer();

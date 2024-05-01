@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { shallowMount } from '@vue/test-utils';
-import Spinner from '../Spinner.vue';
+import Spinner from '@/components/Spinner.vue';
 
 describe('Spinner', () => {
   it('should render without crashing', () => {

@@ -1,6 +1,6 @@
 import { describe, it, expect, vi } from 'vitest';
 import { shallowMount, RouterLinkStub } from '@vue/test-utils';
-import ShowCard from '../ShowCard.vue';
+import ShowCard from '@/components/ShowCard.vue';
 
 describe('ShowCard', () => {
   it('should render without crashing', () => {

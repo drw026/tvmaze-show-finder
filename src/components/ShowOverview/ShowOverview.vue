@@ -22,9 +22,9 @@
 </template>
 
 <script setup lang="ts">
-import { useShows } from '../../lib/services/useShows';
-import ShowCard from '../ShowCard.vue';
-import Spinner from '../Spinner.vue';
+import { useShows } from '@/lib/services/useShows';
+import ShowCard from '@/components/ShowCard.vue';
+import Spinner from '@/components/Spinner.vue';
 
 const { data: showsInGenre, isLoading } = useShows();
 </script>

@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/vue-query';
-import { VITE_TVMAZE_API_URL } from '../../common/constants';
-import { ShowResponse } from '../../types/Show';
-import { mapShow } from '../mappers/mapShow';
-import { sleep, timer } from '../../common/utils';
+import { VITE_TVMAZE_API_URL } from '@/common/constants';
+import { ShowResponse } from '@/types/Show';
+import { mapShow } from '@/lib/mappers/mapShow';
+import { sleep, timer } from '@/common/utils';
 
 export function useShow(showId: string) {
   const url = new URL(showId, `${VITE_TVMAZE_API_URL}/shows/`);

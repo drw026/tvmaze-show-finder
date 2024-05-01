@@ -14,10 +14,10 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { useSearchShows } from '../../lib/services/useSearchShows';
-import ShowCard from '../ShowCard.vue';
+import { useSearchShows } from '@/lib/services/useSearchShows';
+import ShowCard from '@/components/ShowCard.vue';
 import { toRef } from 'vue';
-import Spinner from '../Spinner.vue';
+import Spinner from '@/components/Spinner.vue';
 
 const route = useRoute();
 const { isLoading, data: shows } = useSearchShows(toRef(route.params.query.toString()));

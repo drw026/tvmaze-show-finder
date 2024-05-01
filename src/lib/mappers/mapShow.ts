@@ -1,4 +1,4 @@
-import { Show, ShowResponse } from '../../types/Show';
+import { Show, ShowResponse } from '@/types/Show';
 
 export function mapShow(response: ShowResponse): Show {
   const cast = response._embedded.cast.map((item) => {

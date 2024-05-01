@@ -1,7 +1,7 @@
 import { vi, it, describe, expect, beforeEach } from 'vitest';
 import { shallowMount, mount } from '@vue/test-utils';
-import ShowOverview from '../ShowOverview.vue';
-import { ShowsInGenre } from '../../../types/Show';
+import ShowOverview from '@/components/ShowOverview/ShowOverview.vue';
+import { ShowsInGenre } from '@/types/Show';
 
 const mockUseShows = vi.hoisted(
   (): { isLoading: boolean; data: ShowsInGenre[] | null } => ({
@@ -10,7 +10,7 @@ const mockUseShows = vi.hoisted(
   }),
 );
 
-vi.mock('../../../lib/services/useShows', () => ({
+vi.mock('@/lib/services/useShows', () => ({
   useShows: () => {
     return {
       isLoading: mockUseShows.isLoading,

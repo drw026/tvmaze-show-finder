@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import Search from '../Search.vue';
-import router from '../../router';
+import Search from '@/components/Search.vue';
+import router from '@/router';
 
 describe('Search component', () => {
   it('should render without crashing', () => {

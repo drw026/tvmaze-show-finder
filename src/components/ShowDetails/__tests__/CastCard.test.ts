@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { mount } from '@vue/test-utils';
-import CastCard from '../CastCard.vue';
+import CastCard from '@/components/ShowDetails/CastCard.vue';
 
 describe('CastCard', () => {
   it('should render without crashing', () => {

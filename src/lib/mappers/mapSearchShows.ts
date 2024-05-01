@@ -1,4 +1,4 @@
-import { SearchShowsResponse, ShowItem } from '../../types/Show';
+import { SearchShowsResponse, ShowItem } from '@/types/Show';
 
 export function mapSearchShows(response: SearchShowsResponse[]): ShowItem[] {
   return response.map((item) => {

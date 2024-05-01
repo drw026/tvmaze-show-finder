@@ -55,9 +55,9 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
-import { useShow } from '../../lib/services/useShow';
-import Spinner from '../Spinner.vue';
-import CastCard from './CastCard.vue';
+import { useShow } from '@/lib/services/useShow';
+import Spinner from '@/components/Spinner.vue';
+import CastCard from '@/components/ShowDetails/CastCard.vue';
 import { computed, toValue } from 'vue';
 
 const route = useRoute();

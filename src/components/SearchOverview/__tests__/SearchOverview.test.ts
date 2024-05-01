@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { ShowItem, ShowsInGenre } from '../../../types/Show';
+import { ShowItem } from '@/types/Show';
 import { mount, shallowMount } from '@vue/test-utils';
 import SearchOverview from '../SearchOverview.vue';
 
@@ -16,7 +16,7 @@ const mockUseRoute = vi.hoisted(() => ({
   },
 }));
 
-vi.mock('../../../lib/services/useSearchShows', () => ({
+vi.mock('@/lib/services/useSearchShows', () => ({
   useSearchShows: () => {
     return {
       isLoading: mockUseSearchShows.isLoading,
@@ -63,7 +63,6 @@ describe('SearchOverview', () => {
   });
 
   it('should show data in results', () => {
-    mockUseSearchShows.isLoading = false;
     mockUseSearchShows.data = [{
       id: 1,
       name: 'Show',

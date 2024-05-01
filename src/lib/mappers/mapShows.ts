@@ -1,5 +1,5 @@
-import { ShowResponse, ShowsInGenre } from '../../types/Show';
-import { NUMBER_OF_SHOWS_PER_GENRE } from '../../common/constants';
+import { ShowResponse, ShowsInGenre } from '@/types/Show';
+import { NUMBER_OF_SHOWS_PER_GENRE } from '@/common/constants';
 
 export function mapShows(data: ShowResponse[]): ShowsInGenre[] {
   const allGenres = data.reduce((allGenre, show) => {
