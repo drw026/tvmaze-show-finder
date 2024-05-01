@@ -27,6 +27,8 @@ yarn test
 - Vue-router used for routing
 - TanStack Query used for data fetching and caching
 - Tailwind CSS is used for styling
+- Node version v20.12.0
+- Yarn 1.22.22
 
 ## Architectural decisions
 ### Vue
@@ -50,3 +52,5 @@ from UI code, handles errors and creates loading states.
 Tailwind CSS for rapid styling of the application because of the utility class approach which you can apply immediately.
 The Tailwind CSS is complete and I use it a lot for references.
 
+### Yarn
+Yarn is used/forced in this project over NPM. Yarn offers better performance by doing parallel installation.
