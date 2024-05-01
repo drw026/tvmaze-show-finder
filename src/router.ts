@@ -7,9 +7,22 @@ import SearchOverview from './components/SearchOverview/SearchOverview.vue';
 import Search from './pages/Search.vue';
 
 const routes = [
-  { path: '/', component: Overview, children: [{ path: '', component: ShowOverview }] },
-  { path: '/show/:id', component: Details, children: [{ path: '', component: ShowDetails, name: 'show' }] },
-  { path: '/search/:query', component: Search, children: [{ path: '', component: SearchOverview, name: 'search' }] },
+  {
+    path: '/',
+    component: Overview,
+    children: [{ path: '', component: ShowOverview }],
+  },
+  {
+    path: '/show/:id',
+    component: Details,
+    children: [{ path: '', component: ShowDetails, name: 'show' }],
+  },
+  {
+    path: '/search/:query',
+    component: Search,
+    children: [{ path: '', component: SearchOverview, name: 'search' }],
+  },
+  { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
 const router = createRouter({
