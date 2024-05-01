@@ -14,7 +14,7 @@ const search = () => {
 
 <template>
   <div class="flex gap-3">
-    <button @click="search" class="rounded bg-amber-300 px-3 py-2 font-bold">
+    <button @click="search" class="rounded bg-yellow px-3 py-2 font-bold hover:bg-yellow-light">
       Search
     </button>
     <input

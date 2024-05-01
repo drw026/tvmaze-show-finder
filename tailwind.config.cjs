@@ -8,12 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'turqoise': '#5fa7a7',
+        'turqoise': '#00716b',
         'turqoise-light': '#eef7f6',
-        'turqoise-dark': '#293737'
-      },
-      fontFamily: {
-        'spartan': ['"League Spartan"', 'sans-serif'],
+        'turqoise-dark': '#004c4c',
+        'yellow': '#ffd200',
+        'yellow-light': '#ffe263'
       },
     },
   },
@@ -21,9 +20,10 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('prettier-plugin-tailwindcss'),
     plugin(
-      function({ addBase }) {
+      function({ addBase, theme }) {
         addBase({
           'html': { fontSize: "14px" },
+          'body': { backgroundColor: theme('colors.turqoise') }
         })
       }
     )
