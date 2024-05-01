@@ -10,7 +10,7 @@ const routes = [
   {
     path: '/',
     component: Overview,
-    children: [{ path: '', component: ShowOverview }],
+    children: [{ path: '', component: ShowOverview, name: 'home' }],
   },
   {
     path: '/show/:id',
@@ -28,6 +28,9 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  },
 });
 
 export default router;
