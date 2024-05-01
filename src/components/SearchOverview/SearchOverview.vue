@@ -1,14 +1,3 @@
-<script setup lang="ts">
-import { useRoute } from 'vue-router';
-import { useSearchShows } from '../../lib/services/useSearchShows';
-import ShowCard from '../ShowCard.vue';
-import { toRef } from 'vue';
-import Spinner from '../Spinner.vue';
-
-const route = useRoute();
-const { isLoading, data: shows } = useSearchShows(toRef(route.params.query.toString()));
-</script>
-
 <template>
   <template v-if="isLoading">
     <Spinner />
@@ -22,3 +11,14 @@ const { isLoading, data: shows } = useSearchShows(toRef(route.params.query.toStr
     No shows found
   </div>
 </template>
+
+<script setup lang="ts">
+import { useRoute } from 'vue-router';
+import { useSearchShows } from '../../lib/services/useSearchShows';
+import ShowCard from '../ShowCard.vue';
+import { toRef } from 'vue';
+import Spinner from '../Spinner.vue';
+
+const route = useRoute();
+const { isLoading, data: shows } = useSearchShows(toRef(route.params.query.toString()));
+</script>

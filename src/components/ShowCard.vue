@@ -1,8 +1,3 @@
-<script setup lang="ts">
-
-const props = defineProps(['show']);
-</script>
-
 <template>
   <router-link
     :to="{ name: 'show', params: { id: show.id } }"
@@ -20,3 +15,7 @@ const props = defineProps(['show']);
     <p class="mb-2 text-center">{{ show.name }}</p>
   </router-link>
 </template>
+
+<script setup lang="ts">
+const props = defineProps(['show']);
+</script>

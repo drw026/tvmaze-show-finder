@@ -1,11 +1,3 @@
-<script setup lang="ts">
-import { useShows } from '../../lib/services/useShows';
-import ShowCard from '../ShowCard.vue';
-import Spinner from '../Spinner.vue';
-
-const { data: showsInGenre, isLoading } = useShows();
-</script>
-
 <template>
   <template v-if="isLoading">
     <Spinner />
@@ -28,3 +20,11 @@ const { data: showsInGenre, isLoading } = useShows();
 
   <div v-else-if="!showsInGenre && !isLoading">No data</div>
 </template>
+
+<script setup lang="ts">
+import { useShows } from '../../lib/services/useShows';
+import ShowCard from '../ShowCard.vue';
+import Spinner from '../Spinner.vue';
+
+const { data: showsInGenre, isLoading } = useShows();
+</script>

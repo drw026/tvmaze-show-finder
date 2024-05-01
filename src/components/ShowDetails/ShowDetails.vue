@@ -1,15 +1,3 @@
-<script setup lang="ts">
-import { useRoute } from 'vue-router';
-import { useShow } from '../../lib/services/useShow';
-import Spinner from '../Spinner.vue';
-import CastCard from './CastCard.vue';
-import { computed, toValue } from 'vue';
-
-const route = useRoute();
-const { isLoading, data: show } = useShow(route.params.id.toString());
-const ended = computed(() => toValue(show)?.ended ? `(${toValue(show)?.ended})` : '')
-</script>
-
 <template>
   <template v-if="isLoading">
     <Spinner />
@@ -64,3 +52,15 @@ const ended = computed(() => toValue(show)?.ended ? `(${toValue(show)?.ended})` 
 
   <div v-else-if="!show && !isLoading">No data</div>
 </template>
+
+<script setup lang="ts">
+import { useRoute } from 'vue-router';
+import { useShow } from '../../lib/services/useShow';
+import Spinner from '../Spinner.vue';
+import CastCard from './CastCard.vue';
+import { computed, toValue } from 'vue';
+
+const route = useRoute();
+const { isLoading, data: show } = useShow(route.params.id.toString());
+const ended = computed(() => toValue(show)?.ended ? `(${toValue(show)?.ended})` : '')
+</script>
