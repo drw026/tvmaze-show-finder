@@ -1,5 +1,5 @@
 # TV Maze Show finder
-Find your favourite TV Show and 
+Find your favourite TV Show and view its details, characters and actors.
 
 ## Setup
 Copy `.env.local.example` and rename it to `.env.local`.
