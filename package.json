@@ -1,5 +1,5 @@
 {
-  "name": "abn-amro-assessment",
+  "name": "tvmaze-show-finder",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Andrew Reasoa <mail@andrewreasoa.com>",
@@ -36,5 +36,9 @@
     "build": "vue-tsc && vite build",
     "preview": "vite preview",
     "test": "vitest --dom"
+  },
+  "engines": {
+    "npm": "PLEASE-USE-YARN",
+    "yarn": ">= 1.19.1"
   }
 }
