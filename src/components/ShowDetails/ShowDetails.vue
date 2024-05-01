@@ -39,6 +39,10 @@
             <span class="font-semibold">Language:</span>
             <span>{{ show.language }}</span>
           </li>
+          <li class="flex gap-2">
+            <span class="font-semibold">Rating:</span>
+            <span>{{ show.rating }}</span>
+          </li>
         </ul>
       </section>
     </div>

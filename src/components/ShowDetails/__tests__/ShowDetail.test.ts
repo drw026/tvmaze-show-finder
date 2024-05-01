@@ -94,6 +94,7 @@ describe('ShowDetail', () => {
     expect(generalInformation.text()).toContain('Comedy');
     expect(generalInformation.text()).toContain('Scripted');
     expect(generalInformation.text()).toContain('English');
+    expect(generalInformation.text()).toContain('8.5');
 
     expect(wrapper.find('#cast').exists()).toBe(true);
   });
