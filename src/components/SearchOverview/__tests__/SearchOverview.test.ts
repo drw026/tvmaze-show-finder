@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { ShowItem, ShowsInGenre } from '../../../types/Show';
 import { mount, shallowMount } from '@vue/test-utils';
 import SearchOverview from '../SearchOverview.vue';
@@ -34,6 +34,13 @@ vi.mock('vue-router', () => ({
 }));
 
 describe('SearchOverview', () => {
+  beforeEach(() => {
+    mockUseSearchShows.data = null;
+    mockUseSearchShows.isLoading = false;
+    vi.clearAllMocks();
+    vi.resetAllMocks();
+  })
+
   it('should render without crashing', () => {
     shallowMount(SearchOverview);
   });

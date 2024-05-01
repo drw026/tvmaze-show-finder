@@ -1,4 +1,4 @@
-import { vi, it, describe, expect } from 'vitest';
+import { vi, it, describe, expect, beforeEach } from 'vitest';
 import { shallowMount, mount } from '@vue/test-utils';
 import ShowOverview from '../ShowOverview.vue';
 import { ShowsInGenre } from '../../../types/Show';
@@ -20,6 +20,13 @@ vi.mock('../../../lib/services/useShows', () => ({
 }));
 
 describe('ShowOverview', () => {
+  beforeEach(() => {
+    mockUseShows.data = null;
+    mockUseShows.isLoading = false;
+    vi.clearAllMocks();
+    vi.resetAllMocks();
+  })
+
   it('should render without crashing', () => {
     mount(ShowOverview);
   });

@@ -1,4 +1,4 @@
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { Show } from '../../../types/Show';
 import { mount, shallowMount } from '@vue/test-utils';
 import ShowDetails from '../ShowDetails.vue';
@@ -35,6 +35,13 @@ vi.mock('vue-router', () => ({
 }));
 
 describe('ShowDetail', () => {
+  beforeEach(() => {
+    mockUseShow.data = null;
+    mockUseShow.isLoading = false;
+    vi.clearAllMocks();
+    vi.resetAllMocks();
+  })
+
   it('should render without crashing', () => {
     shallowMount(ShowDetails);
   });
@@ -48,6 +55,7 @@ describe('ShowDetail', () => {
   });
 
   it('should show "no data" when not loading and data is empty', () => {
+    // mockUseShow.isLoading = false;
     mockUseShow.data = null;
 
     const wrapper = shallowMount(ShowDetails);
